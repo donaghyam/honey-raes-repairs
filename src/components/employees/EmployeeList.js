@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from "react"
+import { useHistory } from "react-router-dom"
 
 export const EmployeeList = () => {
     const [employees, changeEmployee] = useState([])
     const [specialties, setSpecial] = useState("")
+    const history = useHistory()
 
     //This hook's main purpose is to observe one, or more, 
     //state variables, and then run code when that state changes.
@@ -17,6 +19,7 @@ export const EmployeeList = () => {
         []
     )
 
+
     useEffect(() => {
                 const justSpecialities = employees.map(emp => emp.specialty)
                 setSpecial(justSpecialities.join(", "))
@@ -25,6 +28,9 @@ export const EmployeeList = () => {
 
     return (
         <>
+            <div>
+                <button onClick={() => history.push("/employees/hire")}>Enter New Employee</button>
+            </div>
             <div>
                 Specialties: { specialties }
             </div>
