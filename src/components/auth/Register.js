@@ -28,6 +28,11 @@ export const Register = (props) => {
                         .then(res => res.json())
                         .then(createdUser => {
                             if (createdUser.hasOwnProperty("id")) {
+                                //localStorage.setItem is a key/value pair
+                                //When you register a user and do a POST,
+                                //it's going to create a new customer in your database
+                                //with a primary key, and that new object will be sent back
+                                //and stored in local storage - a browser mechanism
                                 localStorage.setItem("honey_customer", createdUser.id)
                                 history.push("/")
                             }

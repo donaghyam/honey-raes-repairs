@@ -5,9 +5,16 @@ import { Repairs } from './components/Repairs.js';
 import reportWebVitals from './reportWebVitals';
 import { BrowserRouter } from "react-router-dom"
 
+//This component's purpose is to render the application
+
+
 ReactDOM.render(
   <React.StrictMode>
+    {/* Router handles rendering of different components when the user clicks on navigation items.
+      - this allows the user to bookmark specific places within a single web application
+      - Here we are enabling routing for the ENTIRE application */}
     <BrowserRouter>
+    {/* invoke function  */}
       <Repairs />
     </BrowserRouter>
   </React.StrictMode>,
