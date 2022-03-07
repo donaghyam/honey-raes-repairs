@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"
-import { useHistory } from "react-router-dom"
+import { useHistory, Link } from "react-router-dom"
 
 //The purpose of this component is to display the list of employees
 
@@ -48,7 +48,12 @@ export const EmployeeList = () => {
             {
                 employees.map(
                     (employee) => {
-                        return <p key={`employee--${employee.id}`}>{employee.name}</p>
+                        return <p key={`employee--${employee.id}`}>
+                                {/* Create link to access selected employee details */}
+                                    <Link to={`/employees/${employee.id}`}>
+                                        {employee.name}
+                                    </Link>
+                                </p>
                     }
                 )
             }

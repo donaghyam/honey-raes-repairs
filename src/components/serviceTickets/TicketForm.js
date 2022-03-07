@@ -33,7 +33,7 @@ export const TicketForm = () => {
 
         //Define variable to send object to API
         const fetchOption = {
-            //Sending an object = POST
+            //Sending an object = POST - create new
             method: "POST",
             headers: {
                 "Content-Type": "application/json"
@@ -46,7 +46,6 @@ export const TicketForm = () => {
         //When this operation has completed and something new has been added to the API,
         // we want to send the user back to the list of service tickets.
         return fetch("http://localhost:8088/serviceTickets", fetchOption)
-            //????????????
             .then(response => response.json())
             .then(() => {
                 //Use history mechanism from react-router-dom
